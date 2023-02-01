@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block body %}
+
+    <h1>Accueil</h1>
+
+    <div class="card-group">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Le site</h5>
+            <p class="card-text">Bienvenue sur notre site de référence pour les films et les séries! Nous avons rassemblé ici une liste complète des meilleurs films et séries pour que vous puissiez découvrir de nouvelles histoires captivantes.</p>
+            <p class="card-text"><small class="text-muted">Modifié il y a 3 minutes</small></p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Les films</h5>
+            <p class="card-text">Les films les plus populaires: Découvrez les films les plus populaires du moment, classés selon leur popularité auprès du public. Retrouvez des films classiques et des nouveautés, des films d'action et des comédies romantiques.</p>
+            <p class="card-text"><small class="text-muted">Modifié il y a 3 minutes</small></p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Les séries</h5>
+            <p class="card-text">Les séries les plus populaires: Retrouvez les séries les plus appréciées par les téléspectateurs, qu'il s'agisse de séries dramatiques, de science-fiction ou de comédies. Nous avons rassemblé les meilleures séries pour vous!</p>
+            <p class="card-text"><small class="text-muted">Modifié il y a 3 minutes</small></p>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="card-group">
+        {% for movie in movies %}
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">{{ movie.nom }}</h5>
+            <p class="card-text">{{ movie.synopsis }}</p>
+            <p class="card-text">{{ movie.type }}</p>
+          </div>
+        </div>
+        {% endfor %}
+
+       
+      </div>
+      
+
+{% endblock %}
